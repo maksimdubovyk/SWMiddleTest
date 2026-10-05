@@ -1,0 +1,22 @@
+# Q1: стадіони в Італії з місткістю > 20000 та їхній офіційний сайт (якщо є)
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT ?item ?itemLabel ?value ?website WHERE {
+  {
+    # один рядок на стадіон: найбільша місткість і будь-який із сайтів
+    SELECT ?item (MAX(?cap) AS ?value) (SAMPLE(?site) AS ?website) WHERE {
+      ?item wdt:P31 wd:Q483110 ;
+            wdt:P17 wd:Q38 ;
+            wdt:P1083 ?cap .
+      FILTER(?cap > 20000)
+      OPTIONAL { ?item wdt:P856 ?site . }
+    }
+    GROUP BY ?item
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY DESC(?value) ?item
+LIMIT 20

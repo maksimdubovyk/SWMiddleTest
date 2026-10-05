@@ -1,0 +1,21 @@
+flight_id,airline,from_city,from_country,to_city,to_country,dep_date,duration_min,price_eur,note
+FL-6688,SkyNord,Warsaw,Poland,Tallinn,Estonia,15.05.2026,180,187.99,delay=55;by=FlightLog
+FL-1384,SkyNord,Paris,France,Milan,Italy,28.08.2026,298,71.99,delay=15;by=FlightLog
+FL-8760,AeroVista,Madrid,Spain,Tallinn,Estonia,18.07.2026,310,163.99,
+FL-7285,Orbit Airways,Warsaw,Poland,Vienna,Austria,22.04.2026,141,62.50,
+FL-3381,AeroVista,Berlin,Germany,Kyiv,Ukraine,2026-03-09,292,78.99,delay=55;by=AirWatch
+ fl-7592 ,AeroVista ,PARIS,France,Berlin,Germany,17.07.2026,292,212.99,
+FL-1471,Lumen Air,Tallinn,Estonia,Oslo,Norway,18.06.2026,86,204.00,
+FL-2368,AeroVista,Krakow,Poland,Vilnius,Lithuania,17.03.2026,249,90.50,delay=15;by=PassengerReport
+FL-3830,Orbit Airways,Lyon,France,Berlin,Germany,20.03.2026,145,,
+FL-2830,AeroVista,Munich,Germany,Paris,France,09.06.2026,202,,
+FL-1242,AeroVista,Budapest,Hungary,Vienna,Austria,2026-04-16,86,,delay=55;by=FlightLog
+FL-3269,SkyNord,Berlin,Germany,Lviv,Ukraine,2026-05-17,256,125.99,
+FL-4783,SkyNord,Warsaw,Poland,Rome,Italy,2026-07-12,82,75.99,delay=90;by=FlightLog
+FL-1903,AeroVista,Lviv,Ukraine,Rome,Italy,2026-09-18,178,221.00,
+FL-7592,AeroVista,Paris,France,Berlin,Germany,17.07.2026,292,212.99,
+FL-7209,AeroVista,Berlin,Germany,Madrid,Spain,14.08.2026,268,68.00,
+FL-7880,Lumen Air,Madrid,Spain,Krakow,Poland,2026-08-18,267,245.00,
+FL-9100,TransCarpa,Budapest,Hungary,Warsaw,Poland,2026-03-09,115,201.00,delay=15;by=AirWatch
+ fl-1384 ,SkyNord ,PARIS,France,Milan,Italy,28.08.2026,298,71.99,delay=15;by=FlightLog
+FL-6597,Zephyr Lines,Kyiv,Ukraine,Munich,Germany,2026-08-01,105,,

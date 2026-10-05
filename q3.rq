@@ -1,0 +1,26 @@
+# Q3: стадіони в Італії та населення регіону, у якому вони розташовані
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT ?item ?itemLabel ?region ?regionLabel ?population WHERE {
+  {
+    # один рядок на стадіон: регіон із найбільшим населенням
+    SELECT ?item (SAMPLE(?r) AS ?region) (MAX(?pop) AS ?population) WHERE {
+      ?item wdt:P31 wd:Q483110 ;
+            wdt:P17 wd:Q38 ;
+            wdt:P131 ?r .
+      ?r wdt:P1082 ?pop .
+      FILTER NOT EXISTS {
+        ?item wdt:P131 ?r2 .
+        ?r2 wdt:P1082 ?pop2 .
+        FILTER(?pop2 > ?pop)
+      }
+    }
+    GROUP BY ?item
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY DESC(?population) ?item
+LIMIT 10

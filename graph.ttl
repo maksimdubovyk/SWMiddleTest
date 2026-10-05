@@ -1,0 +1,388 @@
+@prefix ex: <http://example.org/mkr/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Airline a rdfs:Class .
+
+ex:BudgetFlight a rdfs:Class ;
+    rdfs:subClassOf ex:Flight .
+
+ex:City a rdfs:Class .
+
+ex:Country a rdfs:Class .
+
+ex:Flight a rdfs:Class .
+
+ex:LongFlight a rdfs:Class ;
+    rdfs:subClassOf ex:Flight .
+
+ex:Source a rdfs:Class .
+
+ex:arrivesAt a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range ex:City .
+
+ex:departsFrom a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range ex:City .
+
+ex:departureDate a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range xsd:date .
+
+ex:durationMin a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range xsd:integer .
+
+<http://example.org/mkr/flight/FL-1471> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Oslo> ;
+    ex:departsFrom <http://example.org/mkr/city/Tallinn> ;
+    ex:departureDate "2026-06-18"^^xsd:date ;
+    ex:durationMin 86 ;
+    ex:operatedBy <http://example.org/mkr/airline/Lumen_Air> ;
+    ex:priceEur 204.00 .
+
+<http://example.org/mkr/flight/FL-1903> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Rome> ;
+    ex:departsFrom <http://example.org/mkr/city/Lviv> ;
+    ex:departureDate "2026-09-18"^^xsd:date ;
+    ex:durationMin 178 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> ;
+    ex:priceEur 221.00 .
+
+<http://example.org/mkr/flight/FL-2830> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Paris> ;
+    ex:departsFrom <http://example.org/mkr/city/Munich> ;
+    ex:departureDate "2026-06-09"^^xsd:date ;
+    ex:durationMin 202 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> .
+
+<http://example.org/mkr/flight/FL-3269> a ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Lviv> ;
+    ex:departsFrom <http://example.org/mkr/city/Berlin> ;
+    ex:departureDate "2026-05-17"^^xsd:date ;
+    ex:durationMin 256 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/SkyNord> ;
+    ex:priceEur 125.99 .
+
+<http://example.org/mkr/flight/FL-3830> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Berlin> ;
+    ex:departsFrom <http://example.org/mkr/city/Lyon> ;
+    ex:departureDate "2026-03-20"^^xsd:date ;
+    ex:durationMin 145 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/Orbit_Airways> .
+
+<http://example.org/mkr/flight/FL-6597> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Munich> ;
+    ex:departsFrom <http://example.org/mkr/city/Kyiv> ;
+    ex:departureDate "2026-08-01"^^xsd:date ;
+    ex:durationMin 105 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/Zephyr_Lines> .
+
+<http://example.org/mkr/flight/FL-7209> a ex:BudgetFlight,
+        ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Madrid> ;
+    ex:departsFrom <http://example.org/mkr/city/Berlin> ;
+    ex:departureDate "2026-08-14"^^xsd:date ;
+    ex:durationMin 268 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> ;
+    ex:priceEur 68.00 .
+
+<http://example.org/mkr/flight/FL-7285> a ex:BudgetFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Vienna> ;
+    ex:departsFrom <http://example.org/mkr/city/Warsaw> ;
+    ex:departureDate "2026-04-22"^^xsd:date ;
+    ex:durationMin 141 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/Orbit_Airways> ;
+    ex:priceEur 62.50 .
+
+<http://example.org/mkr/flight/FL-7592> a ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Berlin> ;
+    ex:departsFrom <http://example.org/mkr/city/Paris> ;
+    ex:departureDate "2026-07-17"^^xsd:date ;
+    ex:durationMin 292 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> ;
+    ex:priceEur 212.99 .
+
+<http://example.org/mkr/flight/FL-7880> a ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Krakow> ;
+    ex:departsFrom <http://example.org/mkr/city/Madrid> ;
+    ex:departureDate "2026-08-18"^^xsd:date ;
+    ex:durationMin 267 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/Lumen_Air> ;
+    ex:priceEur 245.00 .
+
+<http://example.org/mkr/flight/FL-8760> a ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Tallinn> ;
+    ex:departsFrom <http://example.org/mkr/city/Madrid> ;
+    ex:departureDate "2026-07-18"^^xsd:date ;
+    ex:durationMin 310 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> ;
+    ex:priceEur 163.99 .
+
+ex:fromBusyCountry a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range xsd:boolean .
+
+ex:locatedIn a rdf:Property ;
+    rdfs:domain ex:City ;
+    rdfs:range ex:Country .
+
+ex:operatedBy a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range ex:Airline .
+
+ex:priceEur a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range xsd:decimal .
+
+ex:reportedBy a rdf:Property ;
+    rdfs:domain rdf:Statement ;
+    rdfs:range ex:Source .
+
+<http://example.org/mkr/stmt/FL-1242-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/FlightLog> ;
+    rdf:object 55 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-1242> .
+
+<http://example.org/mkr/stmt/FL-1384-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/FlightLog> ;
+    rdf:object 15 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-1384> .
+
+<http://example.org/mkr/stmt/FL-2368-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/PassengerReport> ;
+    rdf:object 15 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-2368> .
+
+<http://example.org/mkr/stmt/FL-3381-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/AirWatch> ;
+    rdf:object 55 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-3381> .
+
+<http://example.org/mkr/stmt/FL-4783-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/FlightLog> ;
+    rdf:object 90 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-4783> .
+
+<http://example.org/mkr/stmt/FL-6688-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/FlightLog> ;
+    rdf:object 55 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-6688> .
+
+<http://example.org/mkr/stmt/FL-9100-delay> a rdf:Statement ;
+    ex:reportedBy <http://example.org/mkr/source/AirWatch> ;
+    rdf:object 15 ;
+    rdf:predicate ex:hasDelayMinutes ;
+    rdf:subject <http://example.org/mkr/flight/FL-9100> .
+
+<http://example.org/mkr/airline/TransCarpa> a ex:Airline ;
+    rdfs:label "TransCarpa"@en .
+
+<http://example.org/mkr/airline/Zephyr_Lines> a ex:Airline ;
+    rdfs:label "Zephyr Lines"@en .
+
+<http://example.org/mkr/city/Lyon> a ex:City ;
+    rdfs:label "Lyon"@en ;
+    ex:locatedIn <http://example.org/mkr/country/France> .
+
+<http://example.org/mkr/city/Milan> a ex:City ;
+    rdfs:label "Milan"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Italy> .
+
+<http://example.org/mkr/city/Oslo> a ex:City ;
+    rdfs:label "Oslo"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Norway> .
+
+<http://example.org/mkr/city/Vilnius> a ex:City ;
+    rdfs:label "Vilnius"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Lithuania> .
+
+<http://example.org/mkr/country/Austria> a ex:Country ;
+    rdfs:label "Austria"@en .
+
+<http://example.org/mkr/country/Estonia> a ex:Country ;
+    rdfs:label "Estonia"@en .
+
+<http://example.org/mkr/country/Hungary> a ex:Country ;
+    rdfs:label "Hungary"@en .
+
+<http://example.org/mkr/country/Lithuania> a ex:Country ;
+    rdfs:label "Lithuania"@en .
+
+<http://example.org/mkr/country/Norway> a ex:Country ;
+    rdfs:label "Norway"@en .
+
+<http://example.org/mkr/country/Spain> a ex:Country ;
+    rdfs:label "Spain"@en .
+
+<http://example.org/mkr/flight/FL-1242> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Vienna> ;
+    ex:departsFrom <http://example.org/mkr/city/Budapest> ;
+    ex:departureDate "2026-04-16"^^xsd:date ;
+    ex:durationMin 86 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> .
+
+<http://example.org/mkr/flight/FL-1384> a ex:BudgetFlight,
+        ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Milan> ;
+    ex:departsFrom <http://example.org/mkr/city/Paris> ;
+    ex:departureDate "2026-08-28"^^xsd:date ;
+    ex:durationMin 298 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/SkyNord> ;
+    ex:priceEur 71.99 .
+
+<http://example.org/mkr/flight/FL-2368> a ex:BudgetFlight,
+        ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Vilnius> ;
+    ex:departsFrom <http://example.org/mkr/city/Krakow> ;
+    ex:departureDate "2026-03-17"^^xsd:date ;
+    ex:durationMin 249 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> ;
+    ex:priceEur 90.50 .
+
+<http://example.org/mkr/flight/FL-3381> a ex:BudgetFlight,
+        ex:LongFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Kyiv> ;
+    ex:departsFrom <http://example.org/mkr/city/Berlin> ;
+    ex:departureDate "2026-03-09"^^xsd:date ;
+    ex:durationMin 292 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/AeroVista> ;
+    ex:priceEur 78.99 .
+
+<http://example.org/mkr/flight/FL-4783> a ex:BudgetFlight ;
+    ex:arrivesAt <http://example.org/mkr/city/Rome> ;
+    ex:departsFrom <http://example.org/mkr/city/Warsaw> ;
+    ex:departureDate "2026-07-12"^^xsd:date ;
+    ex:durationMin 82 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/SkyNord> ;
+    ex:priceEur 75.99 .
+
+<http://example.org/mkr/flight/FL-6688> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Tallinn> ;
+    ex:departsFrom <http://example.org/mkr/city/Warsaw> ;
+    ex:departureDate "2026-05-15"^^xsd:date ;
+    ex:durationMin 180 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/SkyNord> ;
+    ex:priceEur 187.99 .
+
+<http://example.org/mkr/flight/FL-9100> a ex:Flight ;
+    ex:arrivesAt <http://example.org/mkr/city/Warsaw> ;
+    ex:departsFrom <http://example.org/mkr/city/Budapest> ;
+    ex:departureDate "2026-03-09"^^xsd:date ;
+    ex:durationMin 115 ;
+    ex:fromBusyCountry true ;
+    ex:operatedBy <http://example.org/mkr/airline/TransCarpa> ;
+    ex:priceEur 201.00 .
+
+<http://example.org/mkr/source/PassengerReport> a ex:Source ;
+    rdfs:label "PassengerReport"@en .
+
+<http://example.org/mkr/airline/Lumen_Air> a ex:Airline ;
+    rdfs:label "Lumen Air"@en .
+
+<http://example.org/mkr/airline/Orbit_Airways> a ex:Airline ;
+    rdfs:label "Orbit Airways"@en .
+
+<http://example.org/mkr/city/Budapest> a ex:City ;
+    rdfs:label "Budapest"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Hungary> .
+
+<http://example.org/mkr/city/Krakow> a ex:City ;
+    rdfs:label "Krakow"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Poland> .
+
+<http://example.org/mkr/city/Kyiv> a ex:City ;
+    rdfs:label "Kyiv"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Ukraine> .
+
+<http://example.org/mkr/city/Lviv> a ex:City ;
+    rdfs:label "Lviv"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Ukraine> .
+
+<http://example.org/mkr/city/Munich> a ex:City ;
+    rdfs:label "Munich"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Germany> .
+
+<http://example.org/mkr/city/Rome> a ex:City ;
+    rdfs:label "Rome"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Italy> .
+
+<http://example.org/mkr/city/Vienna> a ex:City ;
+    rdfs:label "Vienna"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Austria> .
+
+<http://example.org/mkr/country/France> a ex:Country ;
+    rdfs:label "France"@en .
+
+<http://example.org/mkr/country/Germany> a ex:Country ;
+    rdfs:label "Germany"@en .
+
+<http://example.org/mkr/country/Italy> a ex:Country ;
+    rdfs:label "Italy"@en .
+
+<http://example.org/mkr/country/Poland> a ex:Country ;
+    rdfs:label "Poland"@en .
+
+<http://example.org/mkr/country/Ukraine> a ex:Country ;
+    rdfs:label "Ukraine"@en .
+
+<http://example.org/mkr/source/AirWatch> a ex:Source ;
+    rdfs:label "AirWatch"@en .
+
+<http://example.org/mkr/city/Madrid> a ex:City ;
+    rdfs:label "Madrid"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Spain> .
+
+<http://example.org/mkr/city/Paris> a ex:City ;
+    rdfs:label "Paris"@en ;
+    ex:locatedIn <http://example.org/mkr/country/France> .
+
+<http://example.org/mkr/city/Tallinn> a ex:City ;
+    rdfs:label "Tallinn"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Estonia> .
+
+<http://example.org/mkr/airline/SkyNord> a ex:Airline ;
+    rdfs:label "SkyNord"@en .
+
+<http://example.org/mkr/city/Warsaw> a ex:City ;
+    rdfs:label "Warsaw"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Poland> .
+
+<http://example.org/mkr/source/FlightLog> a ex:Source ;
+    rdfs:label "FlightLog"@en .
+
+<http://example.org/mkr/city/Berlin> a ex:City ;
+    rdfs:label "Berlin"@en ;
+    ex:locatedIn <http://example.org/mkr/country/Germany> .
+
+ex:hasDelayMinutes a rdf:Property ;
+    rdfs:domain ex:Flight ;
+    rdfs:range xsd:integer .
+
+<http://example.org/mkr/airline/AeroVista> a ex:Airline ;
+    rdfs:label "AeroVista"@en .
+
